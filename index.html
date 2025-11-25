@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyseat Dimensions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Botões de idioma e tema no topo -->
+    <div class="language-selector">
+      <button
+        class="theme-toggle"
+        onclick="toggleTheme()"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+      >
+        <span id="themeIcon">🌙</span>
+      </button>
+      <button
+        class="language-btn"
+        onclick="toggleLanguageMenu()"
+        aria-label="Select language"
+      >
+        <img
+          id="currentFlag"
+          src="imagem/en-US.png"
+          alt="English"
+          width="24"
+          height="18"
+        />
+      </button>
+      <div id="languageMenu" class="language-menu">
+        <button onclick="changeLanguage('en')" class="language-option">
+          <img src="imagem/en-US.png" alt="English" width="24" height="18" />
+          <!-- <span>English</span> -->
+        </button>
+        <button onclick="changeLanguage('pt')" class="language-option">
+          <img src="imagem/pt-BR.png" alt="Português" width="24" height="18" />
+          <!-- <span>Português</span> -->
+        </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 data-i18n="title">
+        Cylindrical Shaft Extension Diameters and Keyseat Dimensions for Square
+        Keys
+      </h1>
+      <div class="button-group">
+        <button
+          class="button-group__button"
+          onclick="toggleTabela('bloco1')"
+          aria-label="Toggle display of smaller diameter values"
+          data-i18n="toggleButton"
+        >
+          Display smaller Ø values
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="thU">Shaft Diameter, U<br />Inches</th>
+              <th data-i18n="thS">Keyseat Width, S<br />Inches</th>
+              <th data-i18n="thR">
+                Bottom of Keyseat to Opposite Side of Cylindrical Shaft, R<br />Inches
+              </th>
+            </tr>
+          </thead>
+
+          <tbody id="bloco1">
+            <tr>
+              <td>0.1875</td>
+              <td>Flat</td>
+              <td>0.178</td>
+            </tr>
+            <tr>
+              <td>0.2500</td>
+              <td>Flat</td>
+              <td>0.235</td>
+            </tr>
+            <tr>
+              <td>0.3125</td>
+              <td>Flat</td>
+              <td>0.295</td>
+            </tr>
+            <tr>
+              <td>0.3750</td>
+              <td>Flat</td>
+              <td>0.328</td>
+            </tr>
+            <tr>
+              <td>0.5000</td>
+              <td>Flat</td>
+              <td>0.453</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>0.625</td>
+              <td>0.188</td>
+              <td>0.517</td>
+            </tr>
+            <tr>
+              <td>0.750</td>
+              <td>0.188</td>
+              <td>0.644</td>
+            </tr>
+            <tr>
+              <td>0.875</td>
+              <td>0.188</td>
+              <td>0.771</td>
+            </tr>
+            <tr>
+              <td>1.000</td>
+              <td>0.250</td>
+              <td>0.859</td>
+            </tr>
+            <tr>
+              <td>1.125</td>
+              <td>0.250</td>
+              <td>0.986</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>1.250</td>
+              <td>0.250</td>
+              <td>1.112</td>
+            </tr>
+            <tr>
+              <td>1.375</td>
+              <td>0.312</td>
+              <td>1.201</td>
+            </tr>
+            <tr>
+              <td>1.500</td>
+              <td>0.375</td>
+              <td>1.289</td>
+            </tr>
+            <tr>
+              <td>1.625</td>
+              <td>0.375</td>
+              <td>1.416</td>
+            </tr>
+            <tr>
+              <td>1.750</td>
+              <td>0.375</td>
+              <td>1.542</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td>1.875</td>
+              <td>0.500</td>
+              <td>1.591</td>
+            </tr>
+            <tr>
+              <td>2.000</td>
+              <td>0.500</td>
+              <td>1.718</td>
+            </tr>
+            <tr>
+              <td>2.125</td>
+              <td>0.500</td>
+              <td>1.845</td>
+            </tr>
+            <tr>
+              <td>2.250</td>
+              <td>0.500</td>
+              <td>1.972</td>
+            </tr>
+            <tr>
+              <td>2.375</td>
+              <td>0.625</td>
+              <td>2.021</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2.500</td>
+              <td>0.625</td>
+              <td>2.148</td>
+            </tr>
+            <tr>
+              <td>2.625</td>
+              <td>0.625</td>
+              <td>2.275</td>
+            </tr>
+            <tr>
+              <td>2.750</td>
+              <td>0.625</td>
+              <td>2.402</td>
+            </tr>
+            <tr>
+              <td>2.875</td>
+              <td>0.750</td>
+              <td>2.450</td>
+            </tr>
+            <tr>
+              <td>3.000</td>
+              <td>0.750</td>
+              <td>2.577</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>3.125</td>
+              <td>0.750</td>
+              <td>2.704</td>
+            </tr>
+            <tr>
+              <td>3.250</td>
+              <td>0.750</td>
+              <td>2.831</td>
+            </tr>
+            <tr>
+              <td>3.375</td>
+              <td>0.875</td>
+              <td>2.880</td>
+            </tr>
+            <tr>
+              <td>3.500</td>
+              <td>0.875</td>
+              <td>3.007</td>
+            </tr>
+            <tr>
+              <td>3.625</td>
+              <td>0.875</td>
+              <td>3.134</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>3.750</td>
+              <td>0.875</td>
+              <td>3.261</td>
+            </tr>
+            <tr>
+              <td>3.875</td>
+              <td>1.000</td>
+              <td>3.309</td>
+            </tr>
+            <tr>
+              <td>4.000</td>
+              <td>1.000</td>
+              <td>3.436</td>
+            </tr>
+            <tr>
+              <td>4.250</td>
+              <td>1.000</td>
+              <td>3.690</td>
+            </tr>
+            <tr>
+              <td>4.375</td>
+              <td>1.000</td>
+              <td>3.817</td>
+            </tr>
+            <tr>
+              <td>4.500</td>
+              <td>1.000</td>
+              <td>3.944</td>
+            </tr>
+
+            <tr>
+              <td data-i18n="range1">Over 4.500 to 5.500</td>
+              <td>1.250</td>
+              <td data-i18n="useCalc">Use the calculator below</td>
+            </tr>
+            <tr>
+              <td data-i18n="range2">Over 5.500 to 6.500</td>
+              <td>1.500</td>
+              <td data-i18n="useCalc">Use the calculator below</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="container__calculo">
+      <h2 data-i18n="calcTitle">R-dimension calculator</h2>
+      <label for="diametro" data-i18n="labelU">Shaft Diameter (U):</label>
+      <div class="input-group">
+        <input
+          type="number"
+          id="diametro"
+          step="0.001"
+          min="0.625"
+          max="6.500"
+        />
+        <button onclick="calcularChaveta()" data-i18n="btnCalculate">
+          Calculate
+        </button>
+      </div>
+      <div id="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
