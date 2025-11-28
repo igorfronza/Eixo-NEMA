@@ -300,7 +300,7 @@
         </table>
       </div>
     </div>
-
+<!-- ================== CALCULADORA ================== -->
     <div class="container__calculo">
       <h2 data-i18n="calcTitle">R-dimension calculator</h2>
       <label for="diametro" data-i18n="labelU">Shaft Diameter (U):</label>
@@ -318,6 +318,39 @@
       </div>
       <div id="resultado"></div>
     </div>
+<!-- ================== CALCULADORA especial ================== -->
+<div class="container__calculo">
+      <h2>Special R dimension calculator</h2>
+      <label for="diametroEspecial">Shaft Diameter (U):</label>
+      <div class="input-group">
+        <input
+          type="number"
+          id="diametroEspecial"
+          step="0.001"
+          min="0.001"
+          max="6.500"
+        />
+      </div>
+      <label for="largura">Keyseat Width (S):</label>
+      <div class="input-group-especial">
+        <input
+          type="number"
+          id="largura"
+          step="0.001"
+          min="0.001"
+          max="1.500"
+        />
+        <button onclick="calcularChavetaEspecial()">
+          Calculate
+        </button>
+      </div>
+      <div id="resultadoEspecial"></div>
+    </div>
+
+
+
+
+
 
     <script src="script.js"></script>
   </body>

@@ -196,7 +196,8 @@ h1 {
 }
 
 .button-group__button,
-.container__calculo button {
+.container__calculo button,
+.container__calculo__especial button {
   background-color: var(--color-primary);
   color: #fff;
   border: none;
@@ -209,7 +210,8 @@ h1 {
 }
 
 .button-group__button:hover,
-.container__calculo button:hover {
+.container__calculo button:hover,
+.container__calculo__especial button:hover {
   background-color: var(--color-primary-dark);
   transform: translateY(-1px);
 }
@@ -291,6 +293,12 @@ label {
   gap: 12px;
   margin-bottom: 8px;
 }
+.input-group-especial {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  margin-left: 100px;
+  }
 
 input[type="number"] {
   width: 120px;
@@ -306,7 +314,15 @@ input[type="number"]:focus {
   outline: 3px solid rgba(0, 123, 255, 0.16);
 }
 
-#resultado {
+#resultado, #resultadoEspecial {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}{
   margin-top: 8px;
   font-size: 1rem;
   color: var(--color-text);

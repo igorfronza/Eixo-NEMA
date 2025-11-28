@@ -1,3 +1,18 @@
+function calcularChavetaEspecial() {
+  const U = parseFloat(document.getElementById("diametroEspecial").value);
+  const S = parseFloat(document.getElementById("largura").value);
+  const resultadoDiv = document.getElementById("resultadoEspecial");
+
+  const R = (U - S + Math.sqrt(U * U - S * S)) / 2;
+
+  resultadoDiv.innerHTML = `
+    <p style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+      <span id="resultadoValoresEspecial">U= ${U.toFixed(3)} | S= ${S.toFixed(3)} | R= ${R.toFixed(3)}</span>
+    </p>
+    <button class="button-group__button" onclick="copiarValoresEspecial()">Copiar Valores</button>
+  `;
+}
+
 function calcularChaveta() {
   const U = parseFloat(document.getElementById("diametro").value);
   const resultadoDiv = document.getElementById("resultado");
@@ -44,6 +59,11 @@ function toggleTabela(id) {
 
 function copiarValores() {
   const texto = document.getElementById("resultadoValores").innerText;
+  navigator.clipboard.writeText(texto);
+}
+
+function copiarValoresEspecial() {
+  const texto = document.getElementById("resultadoValoresEspecial").innerText;
   navigator.clipboard.writeText(texto);
 }
 
