@@ -9,7 +9,7 @@ function calcularChavetaEspecial() {
     <p style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
       <span id="resultadoValoresEspecial">U= ${U.toFixed(3)} | S= ${S.toFixed(3)} | R= ${R.toFixed(3)}</span>
     </p>
-    <button class="button-group__button" onclick="copiarValoresEspecial()">Copiar Valores</button>
+    <button class="button-group__button" onclick="copiarValoresEspecial()" data-i18n="copyBtn">${translations[currentLanguage].copyBtn}</button>
   `;
 }
 
@@ -45,9 +45,7 @@ function calcularChaveta() {
     3
   )}</span>
     </p>
-    <button class="button-group__button" onclick="copiarValores()">${
-      translations[currentLanguage].copyBtn
-    }</button>
+    <button class="button-group__button" onclick="copiarValores()" data-i18n="copyBtn">${translations[currentLanguage].copyBtn}</button>
   `;
 }
 
@@ -80,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Carregar idioma salvo ou usar inglês como padrão
   const savedLang = localStorage.getItem("language") || "en";
   changeLanguage(savedLang);
+
 });
 
 // ===== SISTEMA DE TEMA DARK/LIGHT =====
@@ -106,8 +105,8 @@ const translations = {
     themeToggle: "Toggle dark mode",
     thU: "Shaft Diameter, U<br>Inches",
     thS: "Keyseat Width, S<br>Inches",
-    thR: "Bottom of keyseat to opposite side of cylindrical shaft, R<br>Inches",
-    calcTitle: "R-dimension calculator",
+    thR: "Bottom of keyseat to opposite side of cylindrical shaft, R*<br>Inches",
+    calcTitle: "R* dimension calculator",
     labelU: "Shaft Diameter (U):",
     btnCalculate: "Calculate",
     errorMsg: "Enter a value between 0.625 and 6.500.",
@@ -115,6 +114,11 @@ const translations = {
     range1: "Over 4.500 to 5.500",
     range2: "Over 5.500 to 6.500",
     useCalc: "Use the calculator below",
+    // Calculadora de chaveta especial
+    specialCalcTitle: "Special R* dimension calculator",
+    labelSpecialU: "Shaft Diameter (U):",
+    labelSpecialS: "Keyseat Width (S):",
+    btnSpecialCalculate: "Calculate",
   },
   pt: {
     pageTitle: "Dimensões de chavetas",
@@ -124,8 +128,8 @@ const translations = {
     themeToggle: "Alternar modo escuro",
     thU: "Diâmetro do Eixo, U<br>Polegadas",
     thS: "Largura da Chaveta, S<br>Polegadas",
-    thR: "Fundo da Chaveta até o lado oposto do eixo cilíndrico, R<br>Polegadas",
-    calcTitle: "Calculadora de dimensão R",
+    thR: "Fundo da Chaveta até o lado oposto do eixo cilíndrico, R*<br>Polegadas",
+    calcTitle: "Calculadora de dimensão R*",
     labelU: "Diâmetro do Eixo (U):",
     btnCalculate: "Calcular",
     errorMsg: "Digite um valor entre 0.625 e 6.500.",
@@ -133,6 +137,11 @@ const translations = {
     range1: "Acima de 4.500 até 5.500",
     range2: "Acima de 5.500 até 6.500",
     useCalc: "Use a calculadora abaixo",
+    // Calculadora de chaveta especial
+    specialCalcTitle: "Calculadora de dimensão especial R*",
+    labelSpecialU: "Diâmetro do Eixo (U):",
+    labelSpecialS: "Largura da Chaveta (S):",
+    btnSpecialCalculate: "Calcular",
   },
 };
 

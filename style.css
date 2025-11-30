@@ -322,15 +322,34 @@ input[type="number"]:focus {
   flex-direction: column;
   align-items: center;
   gap: 14px;
-}{
-  margin-top: 8px;
-  font-size: 1rem;
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
 }
+/* Contêiner compacto para a fórmula abaixo da tabela */
+.formula-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 2px auto 12px;
+  max-width: 800px;
+}
+/* Reduzir tamanho da fórmula MathJax no contêiner */
+.formula-container .mjx-chtml {
+  font-size: 0.85rem;
+}
+/* Ajuste de cor da fórmula no modo escuro */
+[data-theme="dark"] .formula-container .mjx-chtml,
+[data-theme="dark"] .formula-container .mjx-math {
+  color: var(--color-text);
+}
+/* Garantir herança de cor para MathJax CHTML */
+.formula-container { color: var(--color-text); }
+[data-theme="dark"] .formula-container { color: var(--color-text); }
+/* Wrapper padrão do MathJax CHTML */
+[data-theme="dark"] mjx-container[jax="CHTML"],
+mjx-container[jax="CHTML"] {
+  color: var(--color-text) !important;
+}
+    
 
 /* ===== FOCO ACESSÍVEL ===== */
 button:focus,

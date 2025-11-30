@@ -299,8 +299,14 @@
           </tbody>
         </table>
       </div>
+      <!-- Fórmula R* renderizada com MathJax (abaixo da tabela) -->
+      <div class="formula-container" aria-label="Formula R">
+        <span id="formulaR"
+          >$$R^{*} = \dfrac{U - S + \sqrt{U^{2} - S^{2}}}{2}$$</span
+        >
+      </div>
     </div>
-<!-- ================== CALCULADORA ================== -->
+    <!-- ================== CALCULADORA ================== -->
     <div class="container__calculo">
       <h2 data-i18n="calcTitle">R-dimension calculator</h2>
       <label for="diametro" data-i18n="labelU">Shaft Diameter (U):</label>
@@ -318,10 +324,12 @@
       </div>
       <div id="resultado"></div>
     </div>
-<!-- ================== CALCULADORA especial ================== -->
-<div class="container__calculo">
-      <h2>Special R dimension calculator</h2>
-      <label for="diametroEspecial">Shaft Diameter (U):</label>
+    <!-- ================== CALCULADORA especial ================== -->
+    <div class="container__calculo">
+      <h2 data-i18n="specialCalcTitle">Special R dimension calculator</h2>
+      <label for="diametroEspecial" data-i18n="labelSpecialU"
+        >Shaft Diameter (U):</label
+      >
       <div class="input-group">
         <input
           type="number"
@@ -331,7 +339,7 @@
           max="6.500"
         />
       </div>
-      <label for="largura">Keyseat Width (S):</label>
+      <label for="largura" data-i18n="labelSpecialS">Keyseat Width (S):</label>
       <div class="input-group-especial">
         <input
           type="number"
@@ -340,18 +348,29 @@
           min="0.001"
           max="1.500"
         />
-        <button onclick="calcularChavetaEspecial()">
+        <button
+          onclick="calcularChavetaEspecial()"
+          data-i18n="btnSpecialCalculate"
+        >
           Calculate
         </button>
       </div>
       <div id="resultadoEspecial"></div>
     </div>
 
-
-
-
-
-
-    <script src="script.js"></script>
+    <!-- MathJax for math rendering -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>
