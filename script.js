@@ -3,13 +3,22 @@ function calcularChavetaEspecial() {
   const S = parseFloat(document.getElementById("largura").value);
   const resultadoDiv = document.getElementById("resultadoEspecial");
 
+  if (isNaN(U) || isNaN(S)) {
+    resultadoDiv.innerHTML = `<p style="color:#c00">Preencha U e S.</p>`;
+    return;
+  }
+
   const R = (U - S + Math.sqrt(U * U - S * S)) / 2;
 
   resultadoDiv.innerHTML = `
     <p style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-      <span id="resultadoValoresEspecial">U= ${U.toFixed(3)} | S= ${S.toFixed(3)} | R= ${R.toFixed(3)}</span>
+      <span id="resultadoValoresEspecial">U= ${U.toFixed(3)} | S= ${S.toFixed(
+    3
+  )} | R= ${R.toFixed(3)}</span>
     </p>
-    <button class="button-group__button" onclick="copiarValoresEspecial()" data-i18n="copyBtn">${translations[currentLanguage].copyBtn}</button>
+    <button class="button-group__button" onclick="copiarValoresEspecial()" data-i18n="copyBtn">${
+      translations[currentLanguage].copyBtn
+    }</button>
   `;
 }
 
@@ -39,13 +48,13 @@ function calcularChaveta() {
 
   resultadoDiv.innerHTML = `
     <p style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-      <span id="resultadoValores"><strong>U=</strong> ${U.toFixed(
-        3
-      )} <strong>S=</strong> ${S.toFixed(3)} <strong>R=</strong> ${R.toFixed(
+      <span id="resultadoValores">U= ${U.toFixed(3)} | S= ${S.toFixed(
     3
-  )}</span>
+  )} | R= ${R.toFixed(3)}</span>
     </p>
-    <button class="button-group__button" onclick="copiarValores()" data-i18n="copyBtn">${translations[currentLanguage].copyBtn}</button>
+    <button class="button-group__button" onclick="copiarValores()" data-i18n="copyBtn">${
+      translations[currentLanguage].copyBtn
+    }</button>
   `;
 }
 
@@ -71,6 +80,28 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Enter") calcularChaveta();
   });
 
+  // Navegação por Enter na calculadora especial
+  const inputU = document.getElementById("diametroEspecial");
+  const inputS = document.getElementById("largura");
+  if (inputU) {
+    inputU.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        if (inputU.value.trim() !== "") {
+          inputS && inputS.focus();
+        }
+      }
+    });
+  }
+  if (inputS) {
+    inputS.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        if (inputU.value.trim() !== "" && inputS.value.trim() !== "") {
+          calcularChavetaEspecial();
+        }
+      }
+    });
+  }
+
   // Carregar tema salvo ou usar light como padrão
   const savedTheme = localStorage.getItem("theme") || "light";
   applyTheme(savedTheme);
@@ -78,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Carregar idioma salvo ou usar inglês como padrão
   const savedLang = localStorage.getItem("language") || "en";
   changeLanguage(savedLang);
-
 });
 
 // ===== SISTEMA DE TEMA DARK/LIGHT =====
